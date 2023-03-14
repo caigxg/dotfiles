@@ -1,0 +1,146 @@
+{
+	"layer": "top",
+	"output": "eDP-1",
+	"modules-left": ["wlr/workspaces"],
+	"modules-center": ["wlr/taskbar"],
+	"modules-right": ["tray","backlight","pulseaudio","pulseaudio#microphone","network","bluetooth","clock","battery"],
+	
+	"wlr/taskbar": {
+    		"format": "{icon}",
+    		"icon-size": 16,
+    		//"icon-theme": "Numix-Circle",
+    		"tooltip-format": "{title}",
+    		"on-click": "activate",
+    		"on-click-middle": "close",
+    		"ignore-list": [
+       			"Alacritty"
+    		],
+    		"app_ids-mapping": {
+      			"firefoxdeveloperedition": "firefox-developer-edition"
+    		}
+
+       	},
+
+    	"wlr/workspaces": {
+      		"format": "{icon}",
+      		"on-click": "activate",
+      		"format-icons": {
+        		"1": "",
+        		"2": "",
+        		"3": "",
+        		"4": "",
+        		"5": "",
+        		"urgent": "",
+        		"active": "",
+        		"default": ""
+      		},
+  		"sort-by-number": true
+    	},
+
+	"pulseaudio": {
+        	"format": "{icon} {volume}%",
+        	"tooltip": false,
+        	"format-muted": " Muted",
+        	"format-bluetooth": "  {volume}%",
+        	"format-bluetooth-muted": " ",
+        	"on-click": "pamixer -t",
+        	"on-scroll-up": "pamixer -i 5",
+        	"on-scroll-down": "pamixer -d 5",
+        	"scroll-step": 5,
+		"format-icons": {
+            		"headphone": "",
+            		"hands-free": "",
+            		"headset": "",
+            		"phone": "",
+            		"portable": "",
+            		"car": "",
+            		"default": ["", "", ""]
+        
+		}
+        },
+
+	"pulseaudio#microphone": {
+        	"format": "{format_source}",
+        	"tooltip": false,
+        	"format-source": " {volume}%",
+        	"format-source-muted": " Muted",
+        	"on-click": "pamixer --default-source -t",
+        	"on-scroll-up": "pamixer --default-source -i 5",
+        	"on-scroll-down": "pamixer --default-source -d 5",
+        	"scroll-step": 5
+	},
+
+
+    	"bluetooth": {
+#        	"on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
+        	"format": " {status}",
+    	},
+
+	"network": {
+		"tooltip": false,
+		"format-wifi": "  {essid}",
+		"format-ethernet": "",
+        	"on-click": "~/.config/waybar/scripts/rofi-wifi-menu.sh"
+	},
+
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        	"on-scroll-up": "light -A 5",
+		"on-scroll-down": "light -U 5"
+	},
+
+    	"battery": {
+        	"states": {
+            		"good": 95,
+            		"warning": 30,
+            		"critical": 20
+        	},
+        	"format": "{icon}  {capacity}%",
+        	"format-charging": " {capacity}%",
+        	"format-plugged": " {capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-icons": ["", "", "", "", ""]
+    	},
+
+	"tray":{
+		"icon-size":20,
+		"spacing": 10
+	},
+
+    	"clock": {
+        	"format": "{:%Y/%m/%d %A %H:%M}"
+    	},
+
+    	"cpu": {
+        	"interval": 15,
+        	"format": " {}%",
+        	"max-length": 10
+    	},
+
+    	"memory": {
+        	"interval": 30,
+        	"format": " {}%",
+        	"max-length": 10
+    	},
+
+    	"custom/media": {
+        	"interval": 30,
+        	"format": "{icon} {}",
+        	"return-type": "json",
+        	"max-length": 20,
+        	"format-icons": {
+            		"spotify": " ",
+            		"default": " "
+        	},
+        	"escape": true,
+        	"on-click": "playerctl play-pause"
+    	},
+
+    	"custom/launcher":{
+        	"format": " ",
+        	"on-click": "rofi -show drun",
+        	"on-click-right": "killall rofi"
+    	}
+}
