@@ -7,7 +7,7 @@
   nix.settings = {
      experimental-features = [ "nix-command" "flakes"];
      substituters = [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         "https://cache.nixos.org/"
         "https://hyprland.cachix.org"
       ];
@@ -34,15 +34,22 @@
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader.
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 5; #开机启动的grub条数
+
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5; #开机启动的grub条数
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
+
+    kernelModules = [ 
+      "i2c-dev"
+    ];
   };
 
-  boot.kernelModules = [ "i2c-dev" ];
+
 
   hardware = {
     bluetooth = {
@@ -57,8 +64,9 @@
     hostName = "nixos";
     networkmanager.enable = true;
     firewall = {
-      allowedTCPPorts = [ 7890 ];
-      allowedUDPPorts = [ 7891 ];
+      enable = true;
+      trustedInterfaces = [ "Mihomo" ];
+      checkReversePath = false;
     };
   };
 
@@ -69,8 +77,8 @@
     };
 
     systemPackages = with pkgs; [
+      util-linux
       vim-full
-      sddm-sugar-dark
       ddcutil
       i2c-tools
       #lyra-cursors
@@ -85,10 +93,12 @@
       sddm = {
         enable = true;
         wayland.enable = true;
-        #package = pkgs.sddm-sugar-dark;
+        extraPackages = [ pkgs.sddm-sugar-dark ];
+        theme = "sugar-dark";
       };
     };
 
+    #切换显示器使用ddcutil时不用sudo
     udev.extraRules = ''
       SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", MODE="0666", GROUP="users"
     '';
@@ -150,6 +160,12 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
+  };
+
+  programs.clash-verge = {
+    enable = true;
+    tunMode = true;
+    serviceMode = true;
   };
 
   users.users.caigx = {
