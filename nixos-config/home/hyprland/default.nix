@@ -21,6 +21,7 @@ in {
     cava
     udiskie
     kdePackages.dolphin
+    kdePackages.gwenview
     grim
     wf-recorder
     slurp

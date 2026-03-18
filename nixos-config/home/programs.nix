@@ -1,13 +1,11 @@
 { pkgs, ... }:{
   home.packages = with pkgs;[
-    #clash-verge-rev
-    #clash-meta
     vscode
     remmina
     wechat
     obsidian
     #gimp3
-    #mpv
+    mpv
     #wpsoffice-cn
     #libreoffice
     #android-tools
