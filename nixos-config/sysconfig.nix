@@ -70,10 +70,31 @@
     };
   };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+    storageDriver = "overlay2";
+    daemon.settings = {
+      registry-mirrors = [
+        "https://cdobzacc.mirror.aliyuncs.com"
+        "https://docker.mirrors.ustc.edu.cn"
+      ];
+    };
+    #自动清理
+    autoPrune = {
+      enable = true;
+    };
+
+  };
+
   environment = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1"; #for hyprland
       _JAVA_AWT_WM_NONREPARENTING = "1";
+      DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock;
     };
 
     systemPackages = with pkgs; [
@@ -171,7 +192,7 @@
   users.users.caigx = {
     isNormalUser = true;
     description = "caigx";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
