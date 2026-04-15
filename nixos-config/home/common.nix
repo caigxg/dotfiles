@@ -1,6 +1,6 @@
 { pkgs, ... }:{
   home.packages = with pkgs;[
-    neofetch
+    fastfetch
     jq
     fzf
     zip
@@ -14,7 +14,7 @@
     dconf-editor
     libva
     libva-utils
-    light
+    brightnessctl
     blueman
   ];
 
