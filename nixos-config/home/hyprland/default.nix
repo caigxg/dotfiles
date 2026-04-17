@@ -12,21 +12,23 @@ in {
     #rofi
     #waybar
     #wlogout
-    #使用noctalia-shell时，就不用上面这些
+    #udiskie
     #dunst
+    #使用noctalia-shell时，就不用上面这些
     noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default
     libnotify
     wl-clipboard
     cliphist
     cava
-    udiskie
+    udisks
+    ntfs3g
     kdePackages.dolphin
     kdePackages.gwenview
     grim
     wf-recorder
     slurp
     nwg-look
-    wev #key board:get key's value
+    wev #获取键盘对应的值
   ];
 
   home.pointerCursor = {

@@ -139,6 +139,8 @@
     #xserver.enable = true;
     #xserver.videoDrivers = [ "amdgpu" ];
     printing.enable = true;  # Enable CUPS to print documents.
+
+    udisks2.enable = true; #不配置这个挂载u盘会失败
   };
 
 
