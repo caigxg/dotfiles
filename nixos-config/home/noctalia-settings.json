@@ -188,8 +188,8 @@
                         "1pBcN24P2H",
                         "tray-icon tray app",
                         "微信",
-                        "键盘 - 英语（美国）",
-                        "中州韵"
+                        "中州韵",
+                        "键盘 - 英语（美国）"
                     ]
                 },
                 {
@@ -562,7 +562,7 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false,
+        "autoUpdate": true,
         "notifyUpdates": true
     },
     "sessionMenu": {

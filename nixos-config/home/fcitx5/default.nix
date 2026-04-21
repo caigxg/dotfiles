@@ -7,11 +7,11 @@ in {
     enable = true;
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
-      qt6Packages.fcitx5-chinese-addons
+      kdePackages.fcitx5-chinese-addons
       fcitx5-rime
       fcitx5-gtk
-      libsForQt5.fcitx5-qt
-      qt6Packages.fcitx5-configtool
+      kdePackages.fcitx5-qt
+      kdePackages.fcitx5-configtool
    ];
   };
 
@@ -19,10 +19,10 @@ in {
 
 
   home.sessionVariables = {
-    #GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
-    FCITX_IM_MODULE = "fcitx";
+    #GTK_IM_MODULE = "fcitx5";
+    #QT_IM_MODULE = "fcitx5";
+    #XMODIFIERS = "@im=fcitx5";
+    #FCITX_IM_MODULE = "fcitx5";
     FCITX5_ENABLE_WAYLAND = "1";
   };
 
