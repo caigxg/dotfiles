@@ -4,7 +4,6 @@
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland";
     
     noctalia-shell = {
       url = "github:noctalia-dev/noctalia-shell";

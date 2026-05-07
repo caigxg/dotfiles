@@ -1,7 +1,7 @@
 { config, pkgs, noctalia-shell, ...}: let 
   hyprPath = "${config.home.homeDirectory}/nixos-config/home/hyprland/hypr";
-  waybarPath = "${config.home.homeDirectory}/nixos-config/home/waybar";
-  rofiPath = "${config.home.homeDirectory}/nixos-config/home/rofi";
+  #waybarPath = "${config.home.homeDirectory}/nixos-config/home/waybar";
+  #rofiPath = "${config.home.homeDirectory}/nixos-config/home/rofi";
   noctaliaConfigFile = "${config.home.homeDirectory}/nixos-config/home/noctalia-settings.json";
 in {
 
@@ -41,9 +41,9 @@ in {
 
 
   home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink hyprPath;
-  home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink waybarPath;
-  home.file.".config/rofi".source = config.lib.file.mkOutOfStoreSymlink rofiPath;
-  home.file.".config/dunst".source = ../dunst;
-  home.file.".config/wlogout".source = ../wlogout;
+#  home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink waybarPath;
+#  home.file.".config/rofi".source = config.lib.file.mkOutOfStoreSymlink rofiPath;
+#  home.file.".config/dunst".source = ../dunst;
+#  home.file.".config/wlogout".source = ../wlogout;
   home.file.".config/noctalia/settings.json".source = config.lib.file.mkOutOfStoreSymlink noctaliaConfigFile;
 }

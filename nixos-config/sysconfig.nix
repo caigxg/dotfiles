@@ -108,6 +108,7 @@
 
 
   services = {
+    #dbus.implementation = "daemon";
     displayManager = {
       autoLogin.enable = true;
       autoLogin.user = "caigx";
@@ -180,8 +181,6 @@
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
   };
 
@@ -199,6 +198,6 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
 }

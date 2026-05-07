@@ -19,10 +19,10 @@ in {
 
 
   home.sessionVariables = {
-    #GTK_IM_MODULE = "fcitx5";
-    #QT_IM_MODULE = "fcitx5";
-    #XMODIFIERS = "@im=fcitx5";
-    #FCITX_IM_MODULE = "fcitx5";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    #XMODIFIERS = "@im=fcitx";
+    FCITX_IM_MODULE = "fcitx";
     FCITX5_ENABLE_WAYLAND = "1";
   };
 

@@ -1,0 +1,8 @@
+warning: Git tree '/home/caigx' is dirty
+building the system configuration...
+warning: Git tree '/home/caigx' is dirty
+evaluation warning: caigx profile: The option `programs.git.userEmail' defined in `/nix/store/vvna7j2hggi72scmhj1wgyim73xx5cbf-source/nixos-config/home/git.nix' has been renamed to `programs.git.settings.user.email'.
+evaluation warning: caigx profile: The option `programs.git.userName' defined in `/nix/store/vvna7j2hggi72scmhj1wgyim73xx5cbf-source/nixos-config/home/git.nix' has been renamed to `programs.git.settings.user.name'.
+evaluation warning: The option `hardware.pulseaudio' defined in `/nix/store/vvna7j2hggi72scmhj1wgyim73xx5cbf-source/nixos-config/sysconfig.nix' has been renamed to `services.pulseaudio'.
+Not checking switch inhibitors (action = boot)
+Done. The new configuration is /nix/store/yr37df89iyrgayhg3xrnpfqn82zhjjj8-nixos-system-nixos-26.05.20260505.549bd84
