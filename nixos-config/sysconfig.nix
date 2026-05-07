@@ -179,25 +179,29 @@
   #desktop
   #services.desktopManager.plasma6.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
 
-  programs.clash-verge = {
-    enable = true;
-    tunMode = true;
-    serviceMode = true;
+    clash-verge = {
+      enable = true;
+      tunMode = true;
+      serviceMode = true;
+    };
+    zsh.enable = true;
   };
+  
+
 
   users.users.caigx = {
     isNormalUser = true;
     description = "caigx";
     extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
   };
-  programs.zsh.enable = true;
+
   users.defaultUserShell = pkgs.zsh;
 
   system.stateVersion = "26.05";
-
 }
