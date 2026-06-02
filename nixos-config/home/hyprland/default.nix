@@ -22,7 +22,6 @@ in {
     cava
     udisks
     ntfs3g
-    kdePackages.dolphin
     kdePackages.gwenview
     grim
     wf-recorder
