@@ -95,6 +95,9 @@
       NIXOS_OZONE_WL = "1"; #for hyprland
       _JAVA_AWT_WM_NONREPARENTING = "1";
       DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock;
+
+      EDITOR = "vim";
+      VISUAL = "gvim";
     };
 
     systemPackages = with pkgs; [

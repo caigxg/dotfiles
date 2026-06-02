@@ -1,5 +1,7 @@
 { pkgs, ... }:{
   home.packages = with pkgs;[
+    thunar
+    yazi
     vscode
     remmina
     wechat
