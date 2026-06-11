@@ -8,7 +8,8 @@
     obsidian
     #gimp3
     mpv
-    #wpsoffice-cn
+    pandoc
+    wpsoffice-cn
     #libreoffice
     #android-tools
     #amule-gui
