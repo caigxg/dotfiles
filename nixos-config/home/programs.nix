@@ -4,7 +4,7 @@
     yazi
     vscode
     remmina
-    wechat
+    #wechat
     obsidian
     #gimp3
     mpv

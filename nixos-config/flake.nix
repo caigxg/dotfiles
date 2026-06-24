@@ -5,11 +5,6 @@
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     
-    noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +16,6 @@
 	self,
 	nixpkgs,
 	home-manager,
-  noctalia-shell,
 	... 
   }@inputs: {
     nixosConfigurations = {
@@ -35,7 +29,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.caigx = import ./home;
-                extraSpecialArgs = { inherit inputs noctalia-shell; };
+                extraSpecialArgs = { inherit inputs ; };
               };
             }
           ];

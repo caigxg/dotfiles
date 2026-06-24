@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia-shell, ...}: let 
+{ config, pkgs, ...}: let 
   hyprPath = "${config.home.homeDirectory}/nixos-config/home/hyprland/hypr";
   #waybarPath = "${config.home.homeDirectory}/nixos-config/home/waybar";
   #rofiPath = "${config.home.homeDirectory}/nixos-config/home/rofi";
@@ -15,7 +15,7 @@ in {
     #udiskie
     #dunst
     #使用noctalia-shell时，就不用上面这些
-    noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default
     libnotify
     wl-clipboard
     cliphist

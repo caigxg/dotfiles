@@ -105,6 +105,7 @@
       vim-full
       ddcutil
       i2c-tools
+      noctalia-shell
       #lyra-cursors
     ];
   };
